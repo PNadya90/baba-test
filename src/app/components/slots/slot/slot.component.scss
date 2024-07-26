@@ -1,0 +1,46 @@
+.slot {
+
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    .jackpot-container {
+        position: absolute;
+        top: 1.1rem;
+        z-index: 100;
+        font-size: 13px;
+        left: 1.4rem;
+        color: #fff;
+    }
+
+    img {
+        height: 14rem;
+        width: 6rem;
+        margin: 0 10px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .lock {
+        width: 6rem;
+        height: 2.5rem;
+        position: absolute;
+        left: 0;
+        top: 7rem;
+        filter: unset;
+        cursor: unset;
+    }
+
+}
+
+
+.slot:hover:not(.locked) {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.locked {
+    opacity: 0.8;
+    pointer-events: none;
+    filter: grayscale(1);
+    cursor: unset;
+}

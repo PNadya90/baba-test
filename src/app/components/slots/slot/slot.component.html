@@ -1,0 +1,11 @@
+<div class="slot">
+    @if(slot.jackpot){
+    <div class="jackpot-container">
+        <app-jackpot [jackpot]="slot.jackpot"></app-jackpot>
+    </div>
+    }
+    <img [src]="slot.image" [class.locked]="slot.isLocked" />
+    @if(slot.isLocked){
+    <img class="lock" src="assets/lobby/lock.png">
+    }
+</div>

@@ -1,0 +1,6 @@
+<audio [src]="backgroundMusicUrl" autoplay loop #audioCtrl>
+</audio>
+<button #playBtn (click)="togglePlay()">
+    <img [src]="isPlaying ? 'assets/lobby/sound-on-icon.png' : 'assets/lobby/mute-icon.png'"
+        alt="{{ isPlaying ?'Play': 'Pause' }}" />
+</button>

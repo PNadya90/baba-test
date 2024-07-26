@@ -1,0 +1,32 @@
+<section class="carousel-container">
+    <div class="carusel">
+        <div class="buttons-slots-container">
+
+            <button (click)="navToPrev()" [class.gacescale]="indexOfFirstCurrentSlot  < 1"
+                [disabled]="indexOfFirstCurrentSlot  < 1">
+                <img src="assets/lobby/arrow-left.png" />
+            </button>
+
+            <div class="slots-container">
+                @for (slot of currentSlots; track $index) {
+                <app-slot [slot]="slot"></app-slot>
+                }
+            </div>
+
+            <button (click)="navToNext()" [class.gacescale]="indexLustCurrentSlot === this.slots.length - 1"
+                [disabled]="indexLustCurrentSlot === this.slots.length - 1">
+                <img src="assets/lobby/arrow-right.png" />
+            </button>
+
+        </div>
+        <div class="bullet-container">
+            @for (bullet of bulletsList; track $index) {
+            <button (click)="changeCurrentPage($index+1)">
+                <img [src]="$index + 1!==currentPage?'assets/lobby/bullet-off.png':'assets/lobby/bullet-on.png'" />
+            </button>
+            }
+
+        </div>
+    </div>
+
+</section>
