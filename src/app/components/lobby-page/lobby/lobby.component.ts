@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LobbyDataService } from '../../services/lobby-data.service';
+import { LobbyDataService } from '../../../services/lobby-data.service';
 import { CommonModule } from '@angular/common';
 import { AudioPlayerComponent } from '../audio-player/audio-player.component';
-import { ISlot } from '../../interfaces/lobbyData.interface';
+import { ISlot } from '../../../interfaces/lobbyData.interface';
 import { SlotsComponent } from '../slots/slots.component';
 
 @Component({

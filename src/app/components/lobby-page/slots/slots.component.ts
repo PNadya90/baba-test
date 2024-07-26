@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { ISlot } from '../../interfaces/lobbyData.interface';
+import { ISlot } from '../../../interfaces/lobbyData.interface';
 import { SlotComponent } from './slot/slot.component';
-import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-slots',
@@ -69,4 +69,5 @@ export class SlotsComponent implements OnInit {
     this.currentSlots = [...this.slots].slice(this.indexOfFirstCurrentSlot, this.indexOfFirstCurrentSlot + this.DISPLAYED_NUMBER_SLOTES);
     this.getIndexesOfCurrentSlots();
   }
+
 }

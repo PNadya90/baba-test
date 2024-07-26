@@ -1,4 +1,4 @@
-<div class="slot">
+<div class="slot" (click)="!slot.isLocked&&goToSlotMachinePage(slot.id)">
     @if(slot.jackpot){
     <div class="jackpot-container">
         <app-jackpot [jackpot]="slot.jackpot"></app-jackpot>

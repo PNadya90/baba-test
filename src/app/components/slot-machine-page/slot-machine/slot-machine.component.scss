@@ -1,0 +1,87 @@
+.slot-machine {
+    height: 350px;
+    position: relative;
+
+    .machine {
+        height: 100%;
+    }
+
+    .logo {
+        position: absolute;
+        top: 6px;
+        left: 190px;
+
+        img {
+            height: 100px
+        }
+    }
+
+    .numbers-container {
+        position: absolute;
+        top: 25px;
+        left: 381px;
+        color: #ff7b1e;
+        display: flex;
+        flex-direction: column;
+        height: 78px;
+        justify-content: space-between;
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 9px;
+        width: 275px;
+        position: absolute;
+        top: 115px;
+        left: 210px;
+
+        .image-cell img {
+            width: 85%;
+        }
+    }
+
+    .buttons-panel {
+        top: 260px;
+        left: 180px;
+        position: absolute;
+
+        .minus-plus {
+            position: absolute;
+            width: 118px;
+            top: 11px;
+            left: -10px;
+            display: flex;
+            justify-content: space-between;
+
+            img {
+                width: 54px;
+            }
+        }
+
+        .pay-btn {
+            position: absolute;
+            left: 110px;
+            width: 60px;
+            top: 15px;
+        }
+
+        .max-bet-btn {
+            position: absolute;
+            left: 175px;
+            width: 60px;
+            top: 15px;
+        }
+
+        .spin-btn {
+            position: absolute;
+            left: 257px;
+            width: 76px;
+            top: 10px;
+        }
+
+        img {
+            cursor: pointer;
+        }
+    }
+}

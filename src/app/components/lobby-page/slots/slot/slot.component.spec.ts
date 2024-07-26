@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SlotComponent } from './slot.component';
 
 describe('SlotComponent', () => {

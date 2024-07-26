@@ -1,0 +1,27 @@
+<div class="slot-machine">
+    <img class="machine" src="assets/slot-1128/mask_game.png" />
+    <div class="logo">
+        <img src="assets/slot-1128/logo.png" />
+    </div>
+    <div class="numbers-container">
+        @for (number of randomNumbers; track number) {
+        <app-jackpot [jackpot]="number"></app-jackpot>
+        }
+    </div>
+    <div class="image-grid">
+        @for (image of shuffledImages; track $index) {
+        <div class="image-cell">
+            <img [src]="image" alt="Random Image">
+        </div>
+        }
+    </div>
+    <div class="buttons-panel">
+        <div class="minus-plus">
+            <img class="" src="assets/slot-1128/but_bet_minus.png" />
+            <img class="" src="assets/slot-1128/but_bet_plus.png" />
+        </div>
+        <img class="pay-btn" src="assets/slot-1128/but_info_bg.png" />
+        <img class="max-bet-btn" src="assets/slot-1128/but_maxbet_bg.png" />
+        <img class="spin-btn" src="assets/slot-1128/but_spin_bg.png" (click)="onGenerateClick()" />
+    </div>
+</div>
