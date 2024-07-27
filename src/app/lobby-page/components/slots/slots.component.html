@@ -21,7 +21,7 @@
         </div>
         <div class="bullet-container">
             @for (bullet of bulletsList; track $index) {
-            <button (click)="changeCurrentPage($index+1)">
+            <button (click)="goToPage($index+1)">
                 <img [src]="$index + 1!==currentPage?'assets/lobby/bullet-off.png':'assets/lobby/bullet-on.png'" />
             </button>
             }

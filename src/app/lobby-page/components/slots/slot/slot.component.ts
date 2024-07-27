@@ -1,15 +1,26 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { ISlot } from '../../../interfaces/lobbyData.interface';
 import { JackpotComponent } from '../../../../shared/components/jackpot/jackpot.component';
 
 @Component({
   selector: 'app-slot',
   standalone: true,
-  imports: [JackpotComponent, RouterModule],
+  imports: [JackpotComponent],
   templateUrl: './slot.component.html',
   styleUrl: './slot.component.scss'
 })
 export class SlotComponent {
   @Input() slot!: ISlot;
+  constructor(private router: Router) {
+
+  }
+  public goToSlotMachinePage(slotId: number): void {
+    if (this.slot.isLocked) return;
+    if (slotId === 1128) {
+      this.router.navigate(['/slot', slotId]);
+    } else {
+      this.router.navigate(['/slot-unavailable']);
+    }
+  }
 }

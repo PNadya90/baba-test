@@ -6,12 +6,8 @@
     align-items: center;
 
     .carusel {
-        margin: auto;
-        width: 60%;
-        height: 80%;
-
         .buttons-slots-container {
-            width: 32rem;
+            width: fit-content;
             height: 100%;
             display: flex;
             justify-content: center;

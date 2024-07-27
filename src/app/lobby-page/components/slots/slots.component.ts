@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SlotComponent } from './slot/slot.component';
 import { CommonModule } from '@angular/common';
-import { animate, style, transition, trigger } from '@angular/animations';
 import { ISlot } from '../../interfaces/lobbyData.interface';
 
 @Component({
@@ -25,7 +24,7 @@ export class SlotsComponent implements OnInit {
     this.currentSlots = [...this.slots].slice(this.indexOfFirstCurrentSlot, this.DISPLAYED_NUMBER_SLOTES);
   }
 
-  public navToPrev() {
+  public navToPrev():void {
     if (this.indexOfFirstCurrentSlot >= this.DISPLAYED_NUMBER_SLOTES) {
       this.currentSlots = [...this.slots]
         .slice(this.indexOfFirstCurrentSlot - this.DISPLAYED_NUMBER_SLOTES, this.indexOfFirstCurrentSlot - this.DISPLAYED_NUMBER_SLOTES + this.DISPLAYED_NUMBER_SLOTES)
@@ -34,7 +33,7 @@ export class SlotsComponent implements OnInit {
     }
   }
 
-  public navToNext() {
+  public navToNext(): void {
     if (this.indexLustCurrentSlot < this.slots.length - 1) {
       this.currentSlots = [...this.slots]
         .slice(this.indexLustCurrentSlot + 1, this.indexLustCurrentSlot + this.DISPLAYED_NUMBER_SLOTES + 1)
@@ -43,12 +42,12 @@ export class SlotsComponent implements OnInit {
     }
   }
 
-  private getIndexesOfCurrentSlots() {
+  private getIndexesOfCurrentSlots():void {
     this.indexOfFirstCurrentSlot = this.slots.findIndex(el => el.id === this.currentSlots[0].id);
     this.indexLustCurrentSlot = this.slots.findIndex(el => el.id === this.currentSlots[this.currentSlots.length - 1].id)
   }
 
-  public changeCurrentPage(page: number) {
+  public goToPage(page: number):void {
     this.currentPage = page;
     this.indexOfFirstCurrentSlot = (this.currentPage - 1) * this.DISPLAYED_NUMBER_SLOTES;
     this.currentSlots = [...this.slots].slice(this.indexOfFirstCurrentSlot, this.indexOfFirstCurrentSlot + this.DISPLAYED_NUMBER_SLOTES);

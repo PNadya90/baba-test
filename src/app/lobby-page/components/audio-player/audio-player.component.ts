@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-audio-player',
@@ -9,28 +9,31 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@
 })
 export class AudioPlayerComponent implements AfterViewInit {
   @Input() backgroundMusicUrl!: string;
-  public isPlaying = true;
   @ViewChild('audioCtrl') audio!: any;
   @ViewChild('playBtn') playBtn!: ElementRef;
-  
+
+  public isPlaying = true;
+
+
   ngAfterViewInit(): void {
-  
+
     const interval = setInterval(() => {
-      if (!this.audio.nativeElement.paused) { 
-        clearInterval(interval)}
-        else {
+      if (!this.audio.nativeElement.paused) {
+        clearInterval(interval)
+      }
+      else {
         this.audio.nativeElement
           .play()
           .then(() => {
             clearInterval(interval);
           })
-          .catch((err:Error) => console.log(err));
+          .catch((err: Error) => console.log(err));
       }
     }, 200);
-   
+
   }
-  public togglePlay() {
-    
+
+  public togglePlay():void {
     this.isPlaying ? this.audio.nativeElement.pause() : this.audio.nativeElement.play();
     this.isPlaying = !this.isPlaying;
   }

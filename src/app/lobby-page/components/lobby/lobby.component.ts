@@ -13,7 +13,7 @@ import { ISlot } from '../../interfaces/lobbyData.interface';
   styleUrl: './lobby.component.scss'
 })
 export class LobbyComponent {
-  public backgroundImgUrl: string | undefined;
+  public backgroundImgUrl!: string;
   public backgroundMusicUrl!: string;
   public slots: ISlot[] = [];
 

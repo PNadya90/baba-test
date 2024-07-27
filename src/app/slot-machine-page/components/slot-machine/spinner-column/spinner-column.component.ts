@@ -12,10 +12,11 @@ import { SlotMachineService } from '../../../services/slot-machine.service';
 export class SpinnerColumnComponent {
   @Input()
   delay: number = 0;
-  @ViewChild('cellContainer')
-  cellContainer!: ElementRef;
+  @ViewChild('cellContainer') cellContainer!: ElementRef;
   suffledImages: string[] = [];
+
   constructor(private slotMacineSrv: SlotMachineService) {
+
     effect(() => {
       if (slotMacineSrv.start()) {
         this.startSpin();
@@ -27,7 +28,7 @@ export class SpinnerColumnComponent {
     }
   }
 
-  startSpin() {
+  public startSpin():void {
     const firstThreeItem: string[] = []
     for (let i = 0; i < 3; ++i) {
       const symbolId = Math.floor(Math.random() * (12)) + 1;

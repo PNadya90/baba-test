@@ -19,7 +19,7 @@ export class SlotMachineComponent {
   constructor(private slotMacineSrv: SlotMachineService) { }
 
 
-  public spin() {
+  public spin():void {
     if (this.enableSpin && this.parseNumber(this.betNumber)) {
       this.enableSpin = false;
       this.randomNumbers = this.generateRandomNumbers(5);
