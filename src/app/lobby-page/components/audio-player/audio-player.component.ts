@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-audio-player',
@@ -7,7 +7,7 @@ import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular
   templateUrl: './audio-player.component.html',
   styleUrl: './audio-player.component.scss'
 })
-export class AudioPlayerComponent implements AfterViewInit {
+export class AudioPlayerComponent implements AfterViewInit, OnDestroy {
   @Input() backgroundMusicUrl!: string;
   @ViewChild('audioCtrl') audio!: any;
   @ViewChild('playBtn') playBtn!: ElementRef;
@@ -31,6 +31,10 @@ export class AudioPlayerComponent implements AfterViewInit {
       }
     }, 300);
 
+  }
+
+  ngOnDestroy(): void {
+    this.audio.nativeElement.pause()
   }
 
   public togglePlay():void {
