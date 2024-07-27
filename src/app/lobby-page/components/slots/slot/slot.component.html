@@ -1,4 +1,4 @@
-<div class="slot" (click)="!slot.isLocked&&goToSlotMachinePage(slot.id)">
+<div class="slot" [routerLink]="slot.id===1128? ['/slot/' + slot.id.toString()]:['/slot-unavailable']">
     @if(slot.jackpot){
     <div class="jackpot-container">
         <app-jackpot [jackpot]="slot.jackpot"></app-jackpot>

@@ -12,7 +12,8 @@ export class JackpotComponent implements OnInit {
   @Input() jackpot!: number;
   @Input() delay?: number;
 
-  currentNumber: number = 0;
+  public initialValue = '000.000.000.000'
+  public currentNumber: number = 0;
 
 
   ngOnInit(): void {

@@ -1,4 +1,7 @@
 <div class="number-counter">
-    {{ currentNumber | number:'1.0-0' }}
-  </div>
-  
+  @if(!currentNumber){
+  {{initialValue}}
+  } @else{
+  {{ currentNumber | number:'1.0-0' }}
+  }
+</div>

@@ -14,12 +14,13 @@
         }
     </div>
     <div class="buttons-panel">
+        <div class="bet-number">{{betNumber}}</div>
         <div class="minus-plus">
-            <img class="" src="assets/slot-1128/but_bet_minus.png" />
-            <img class="" src="assets/slot-1128/but_bet_plus.png" />
+            <img src="assets/slot-1128/but_bet_minus.png" (click)="decreaseBet()" />
+            <img src="assets/slot-1128/but_bet_plus.png" (click)="increaseBet()" />
         </div>
         <img class="pay-btn" src="assets/slot-1128/but_info_bg.png" />
         <img class="max-bet-btn" src="assets/slot-1128/but_maxbet_bg.png" />
-        <img class="spin-btn" src="assets/slot-1128/but_spin_bg.png" (click)="onGenerateClick()" />
+        <img class="spin-btn" src="assets/slot-1128/but_spin_bg.png" (click)="spin()" />
     </div>
 </div>

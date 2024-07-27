@@ -45,8 +45,15 @@
         top: 260px;
         left: 180px;
         position: absolute;
-
+        .bet-number {
+            position: absolute;
+            left: 38px;
+            color: red;
+            font-size: 5px;
+            top: 13px;
+        }
         .minus-plus {
+    
             position: absolute;
             width: 118px;
             top: 11px;
