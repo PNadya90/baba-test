@@ -1,0 +1,9 @@
+<div class="column-container">
+    <div #cellContainer class="column-cell-container">
+       @for(image of suffledImages; track $index){
+        <div class="cell-item">
+            <img [src]="image">
+        </div>
+       }
+    </div>
+</div>

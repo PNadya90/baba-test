@@ -5,15 +5,15 @@
     </div>
     <div class="numbers-container">
         @for (number of randomNumbers; track number) {
-        <app-jackpot [jackpot]="number"></app-jackpot>
+        <app-jackpot [jackpot]="number" [delay]="5"></app-jackpot>
         }
     </div>
     <div class="image-grid">
-        @for (image of shuffledImages; track $index) {
-        <div class="image-cell">
-            <img [src]="image" alt="Random Image">
-        </div>
-        }
+        <app-spinner-column [delay]="0"></app-spinner-column>
+        <app-spinner-column [delay]="1"></app-spinner-column>
+        <app-spinner-column [delay]="2"></app-spinner-column>
+        <app-spinner-column [delay]="3"></app-spinner-column>
+        <app-spinner-column [delay]="4"></app-spinner-column>
     </div>
     <div class="buttons-panel">
         <div class="minus-plus">

@@ -10,6 +10,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class JackpotComponent implements OnInit {
   @Input() jackpot!: number;
+  @Input() delay?: number;
+
   currentNumber: number = 0;
 
 
@@ -18,7 +20,7 @@ export class JackpotComponent implements OnInit {
   }
 
   animateNumber() {
-    const duration = 2000; // animation duration in milliseconds
+    const duration = this.delay ? this.delay * 1000 : 2000; // animation duration in milliseconds
     const frameDuration = 1000 / 60; // 60 frames per second
     const totalFrames = duration / frameDuration;
     const increment = this.jackpot / totalFrames;

@@ -1,0 +1,25 @@
+.column-container{
+    height: 145px;
+    width: 40px; 
+    display: flex;
+    overflow: hidden;
+    .column-cell-container{
+        height: 725px;
+        width: 40px; 
+        bottom: 624px;
+        position: relative;
+        transition: 3s;
+        .cell-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 45px;
+            margin-top: 3px;
+            img {
+                width: 85%;
+                height: 40px;
+            }
+        }
+    }
+}
