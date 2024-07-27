@@ -16,33 +16,36 @@ export class SpinnerColumnComponent {
   suffledImages: string[] = [];
 
   constructor(private slotMacineSrv: SlotMachineService) {
-
     effect(() => {
       if (slotMacineSrv.start()) {
         this.startSpin();
       }
     })
-    for (let i = 0; i < 16; ++i) {
-      const symbolId = Math.floor(Math.random() * (12)) + 1;
-      this.suffledImages.push("assets/slot-1128/symbol_" + symbolId + ".png");
-    }
+    this.fillShaffledImages();
   }
 
-  public startSpin():void {
+  public startSpin(): void {
     const firstThreeItem: string[] = []
     for (let i = 0; i < 3; ++i) {
       const symbolId = Math.floor(Math.random() * (12)) + 1;
       firstThreeItem.push("assets/slot-1128/symbol_" + symbolId + ".png");
     }
-    this.suffledImages.splice(0, 3, ...firstThreeItem );
+    this.suffledImages.splice(0, 3, ...firstThreeItem);
     setTimeout(() => {
       this.cellContainer.nativeElement.style.bottom = 0;
       setTimeout(() => {
-        this.suffledImages.splice(13, 3, ...firstThreeItem );
+        this.suffledImages.splice(13, 3, ...firstThreeItem);
         this.cellContainer.nativeElement.style.transition = '0s';
         this.cellContainer.nativeElement.style.bottom = '624px';//jump
-        setTimeout(() => { this.cellContainer.nativeElement.style.transition = '3s' },1000);
+        setTimeout(() => { this.cellContainer.nativeElement.style.transition = '3s' }, 1000);
       }, 3000)
     }, this.delay * 500);
+  }
+
+  private fillShaffledImages() {
+    for (let i = 0; i < 16; ++i) {
+      const symbolId = Math.floor(Math.random() * (12)) + 1;
+      this.suffledImages.push("assets/slot-1128/symbol_" + symbolId + ".png");
+    }
   }
 }
