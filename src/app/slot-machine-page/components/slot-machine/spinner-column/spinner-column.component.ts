@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, effect, ElementRef, Input, ViewChild } from '@angular/core';
-import { SlotMachineService } from '../slot-machine.service';
+import { SlotMachineService } from '../../../services/slot-machine.service';
 
 @Component({
   selector: 'app-spinner-column',

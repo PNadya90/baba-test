@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LobbyDataService } from '../../../services/lobby-data.service';
+import { LobbyDataService } from '../../services/lobby-data.service'
 import { CommonModule } from '@angular/common';
 import { AudioPlayerComponent } from '../audio-player/audio-player.component';
-import { ISlot } from '../../../interfaces/lobbyData.interface';
 import { SlotsComponent } from '../slots/slots.component';
+import { ISlot } from '../../interfaces/lobbyData.interface';
 
 @Component({
   selector: 'app-lobby',
@@ -12,7 +12,7 @@ import { SlotsComponent } from '../slots/slots.component';
   templateUrl: './lobby.component.html',
   styleUrl: './lobby.component.scss'
 })
-export class LobbyComponent implements OnInit {
+export class LobbyComponent {
   public backgroundImgUrl: string | undefined;
   public backgroundMusicUrl!: string;
   public slots: ISlot[] = [];
@@ -23,10 +23,6 @@ export class LobbyComponent implements OnInit {
       this.backgroundMusicUrl = backgroundMusic;
       this.slots = slots.sort((a, b) => a.order - b.order);
     })
-  }
-
-  ngOnInit() {
-
   }
 
 }

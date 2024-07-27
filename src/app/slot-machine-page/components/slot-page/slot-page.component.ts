@@ -12,11 +12,11 @@ import { SlotMachineComponent } from "../slot-machine/slot-machine.component";
 
 export class SlotPageComponent implements OnInit {
   public message = 'slot is not available';
-  slotId: number | undefined;
+  public slotId: number | undefined;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    public router: Router
   ) {
 
   }

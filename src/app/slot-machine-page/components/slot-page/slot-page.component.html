@@ -1,14 +1,10 @@
 <div class="slot-page-container">
     @if(!slotId){
-    <ng-container>
         <div class="message-container">
             {{message}}
             <button class="back-btn" (click)="goBackToLobby()">Back to Lobby</button>
         </div>
-    </ng-container>
     } @else {
-    <ng-container>
         <app-slot-machine></app-slot-machine>
-    </ng-container>
     }
 </div>

@@ -4,6 +4,6 @@ import { Injectable, signal, WritableSignal } from '@angular/core';
   providedIn: 'root'
 })
 export class SlotMachineService {
-  start:WritableSignal<boolean> = signal(false);
+  public start: WritableSignal<boolean> = signal(false);
   constructor() { }
 }

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ISlot } from '../../../../interfaces/lobbyData.interface';
-import { JackpotComponent } from '../../jackpot/jackpot.component';
 import { Router } from '@angular/router';
+import { ISlot } from '../../../interfaces/lobbyData.interface';
+import { JackpotComponent } from '../../../../shared/components/jackpot/jackpot.component';
 
 @Component({
   selector: 'app-slot',

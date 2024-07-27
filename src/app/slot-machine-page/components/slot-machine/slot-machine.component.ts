@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { JackpotComponent } from '../../lobby-page/jackpot/jackpot.component';
-import { SpinnerColumnComponent } from './spinner-column/spinner-column.component';
-import { SlotMachineService } from './slot-machine.service';
+import { Component } from '@angular/core';
+import { JackpotComponent } from '../../../shared/components/jackpot/jackpot.component';
+import { SpinnerColumnComponent } from './spinner-column/spinner-column.component'
+import { SlotMachineService } from '../../services/slot-machine.service';
 
 @Component({
   selector: 'app-slot-machine',
@@ -11,19 +10,15 @@ import { SlotMachineService } from './slot-machine.service';
   templateUrl: './slot-machine.component.html',
   styleUrl: './slot-machine.component.scss'
 })
-export class SlotMachineComponent implements OnInit {
+export class SlotMachineComponent {
+  public randomNumbers: number[] = Array(5).fill(0);
+  public spinnersNumber = Array.from(Array(5).keys());
+  private enableSpin = true;
 
-  shuffledImages: string[] = [];
-  columnCount: number = 5; // Number of columns
-  totalImages: number = 16; // Total number of images to display (adjust as needed)
-  randomNumbers: number[] = Array(5).fill(0);
-  enableSpin = true;
   constructor(private slotMacineSrv: SlotMachineService) { }
 
-  ngOnInit(): void {
-  }
 
-  onGenerateClick() {
+  public onGenerateClick() {
     if (this.enableSpin) {
       this.enableSpin = false;
       this.randomNumbers = this.generateRandomNumbers(5);
@@ -33,8 +28,8 @@ export class SlotMachineComponent implements OnInit {
     }
   }
 
-  generateRandomNumbers(count: number): number[] {
-    const numbers = [];
+  private generateRandomNumbers(count: number): number[] {
+    const numbers: number[] = [];
     for (let i = 0; i < count; i++) {
       const randomNumber = Math.floor(Math.random() * 1000000000);
       numbers.push(randomNumber);

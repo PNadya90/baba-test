@@ -19,7 +19,7 @@ export class JackpotComponent implements OnInit {
     this.animateNumber();
   }
 
-  animateNumber() {
+  private animateNumber() {
     const duration = this.delay ? this.delay * 1000 : 2000; // animation duration in milliseconds
     const frameDuration = 1000 / 60; // 60 frames per second
     const totalFrames = duration / frameDuration;

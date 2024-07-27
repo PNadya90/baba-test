@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { ISlot } from '../../../interfaces/lobbyData.interface';
 import { SlotComponent } from './slot/slot.component';
 import { CommonModule } from '@angular/common';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { ISlot } from '../../interfaces/lobbyData.interface';
 
 @Component({
   selector: 'app-slots',
