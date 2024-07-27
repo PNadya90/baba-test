@@ -1,10 +1,10 @@
 <div class="slot-page-container">
     @if(!slotId){
-        <div class="message-container">
-            {{message}}
-            <button class="back-btn" (click)="goBackToLobby()">Back to Lobby</button>
-        </div>
+    <div class="message-container">
+        {{message}}
+        <button class="back-btn" [routerLink]="['/']">Back to Lobby</button>
+    </div>
     } @else {
-        <app-slot-machine></app-slot-machine>
+    <app-slot-machine></app-slot-machine>
     }
 </div>
