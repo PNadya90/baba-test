@@ -29,7 +29,7 @@ export class AudioPlayerComponent implements AfterViewInit {
           })
           .catch((err: Error) => console.log(err));
       }
-    }, 200);
+    }, 300);
 
   }
 
