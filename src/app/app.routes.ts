@@ -6,4 +6,5 @@ export const routes: Routes = [
      { path: '', component: LobbyComponent },
      { path: 'slot/:id', component: SlotPageComponent },
      { path: 'slot-unavailable', component: SlotPageComponent },
+     { path: '**', redirectTo: '' }
 ];

@@ -21,15 +21,11 @@ export class SpinnerColumnComponent {
         this.startSpin();
       }
     })
-    this.fillShaffledImages();
+    this.suffledImages = this.fillShaffledImages(16);
   }
 
   public startSpin(): void {
-    const firstThreeItem: string[] = []
-    for (let i = 0; i < 3; ++i) {
-      const symbolId = Math.floor(Math.random() * (12)) + 1;
-      firstThreeItem.push("assets/slot-1128/symbol_" + symbolId + ".png");
-    }
+    const firstThreeItem: string[] = this.fillShaffledImages(3);
     this.suffledImages.splice(0, 3, ...firstThreeItem);
     setTimeout(() => {
       this.cellContainer.nativeElement.style.bottom = 0;
@@ -42,10 +38,12 @@ export class SpinnerColumnComponent {
     }, this.delay * 500);
   }
 
-  private fillShaffledImages() {
-    for (let i = 0; i < 16; ++i) {
+  private fillShaffledImages(numberImgs: number) {
+    const imgsSrc: string[] = [];
+    for (let i = 0; i < numberImgs; ++i) {
       const symbolId = Math.floor(Math.random() * (12)) + 1;
-      this.suffledImages.push("assets/slot-1128/symbol_" + symbolId + ".png");
+      imgsSrc.push("assets/slot-1128/symbol_" + symbolId + ".png");
     }
+    return imgsSrc;
   }
 }

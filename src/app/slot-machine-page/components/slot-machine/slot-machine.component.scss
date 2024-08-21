@@ -45,6 +45,7 @@
         top: 260px;
         left: 180px;
         position: absolute;
+
         .bet-number {
             position: absolute;
             left: 38px;
@@ -52,8 +53,9 @@
             font-size: 5px;
             top: 13px;
         }
+
         .minus-plus {
-    
+
             position: absolute;
             width: 118px;
             top: 11px;
@@ -85,6 +87,10 @@
             left: 257px;
             width: 76px;
             top: 10px;
+        }
+
+        .spin-btn:hover {
+            filter: drop-shadow(7px 7px 7px #FFFFFF);
         }
 
         img {
