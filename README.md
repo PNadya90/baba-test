@@ -1,6 +1,9 @@
 # BabaAssignment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## IMPORTANT NOTE:
+Browser not allows to play music till user interact with document so music will start only when user click on something. 
+Slot machine is working only if you SET SOME BET.
 
 ## Development server
 
