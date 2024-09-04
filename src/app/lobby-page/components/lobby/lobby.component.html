@@ -1,10 +1,9 @@
 @if(backgroundImgUrl){
 <div [ngStyle]="{'background-image': 'url(' + backgroundImgUrl + ')'}" class="background-container">
     <div class="audio-container">
-        @if(backgroundMusicUrl){
+        <!-- @if(backgroundMusicUrl){
         <app-audio-player [backgroundMusicUrl]="backgroundMusicUrl"></app-audio-player>
-
-        }
+        } -->
     </div>
     @if(slots.length>0){
     <div class="slots-container">

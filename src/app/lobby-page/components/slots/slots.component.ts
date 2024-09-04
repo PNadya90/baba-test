@@ -20,11 +20,18 @@ export class SlotsComponent implements OnInit {
   public indexLustCurrentSlot = this.DISPLAYED_NUMBER_SLOTES - 1;
 
   ngOnInit(): void {
+    const innerWidth = window.innerWidth;
+    if (innerWidth < 537) {
+      this.DISPLAYED_NUMBER_SLOTES = 3;
+    }
+    if (innerWidth < 440) {
+      this.DISPLAYED_NUMBER_SLOTES = 2;
+    }
     this.bulletsList = new Array(Math.ceil(this.slots.length / this.DISPLAYED_NUMBER_SLOTES));
     this.currentSlots = [...this.slots].slice(this.indexOfFirstCurrentSlot, this.DISPLAYED_NUMBER_SLOTES);
   }
 
-  public navToPrev():void {
+  public navToPrev(): void {
     if (this.indexOfFirstCurrentSlot >= this.DISPLAYED_NUMBER_SLOTES) {
       this.currentSlots = [...this.slots]
         .slice(this.indexOfFirstCurrentSlot - this.DISPLAYED_NUMBER_SLOTES, this.indexOfFirstCurrentSlot - this.DISPLAYED_NUMBER_SLOTES + this.DISPLAYED_NUMBER_SLOTES)
@@ -42,12 +49,12 @@ export class SlotsComponent implements OnInit {
     }
   }
 
-  private getIndexesOfCurrentSlots():void {
+  private getIndexesOfCurrentSlots(): void {
     this.indexOfFirstCurrentSlot = this.slots.findIndex(el => el.id === this.currentSlots[0].id);
     this.indexLustCurrentSlot = this.slots.findIndex(el => el.id === this.currentSlots[this.currentSlots.length - 1].id)
   }
 
-  public goToPage(page: number):void {
+  public goToPage(page: number): void {
     this.currentPage = page;
     this.indexOfFirstCurrentSlot = (this.currentPage - 1) * this.DISPLAYED_NUMBER_SLOTES;
     this.currentSlots = [...this.slots].slice(this.indexOfFirstCurrentSlot, this.indexOfFirstCurrentSlot + this.DISPLAYED_NUMBER_SLOTES);

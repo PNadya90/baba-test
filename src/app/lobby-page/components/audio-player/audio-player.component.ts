@@ -35,9 +35,10 @@ export class AudioPlayerComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.audio.nativeElement.pause()
+    this.isPlaying = false;
   }
 
-  public togglePlay():void {
+  public togglePlay(): void {
     this.isPlaying ? this.audio.nativeElement.pause() : this.audio.nativeElement.play();
     this.isPlaying = !this.isPlaying;
   }
