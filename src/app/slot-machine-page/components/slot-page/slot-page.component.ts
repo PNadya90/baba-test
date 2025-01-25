@@ -11,7 +11,7 @@ import { SlotMachineComponent } from "../slot-machine/slot-machine.component";
 })
 
 export class SlotPageComponent implements OnInit {
-  public message = 'slot is not available';
+  public message = 'slot is not available. please try slot "777"';
   public slotId: number | undefined;
 
   constructor(

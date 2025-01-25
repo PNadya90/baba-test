@@ -1,0 +1,7 @@
+<div class="popup-backdrop" (click)="closePopup()">
+    <div class="popup" (click)="$event.stopPropagation()">
+      <p>{{message}}</p>
+      <button (click)="closePopup()">OK</button>
+    </div>
+  </div>
+  

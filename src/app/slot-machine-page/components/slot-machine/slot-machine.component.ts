@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { JackpotComponent } from '../../../shared/components/jackpot/jackpot.component';
 import { SpinnerColumnComponent } from './spinner-column/spinner-column.component'
 import { SlotMachineService } from '../../services/slot-machine.service';
+import { BetPopupComponent } from "../bet-popup/bet-popup.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-slot-machine',
   standalone: true,
-  imports: [JackpotComponent, SpinnerColumnComponent],
+  imports: [JackpotComponent, SpinnerColumnComponent, BetPopupComponent],
   templateUrl: './slot-machine.component.html',
   styleUrl: './slot-machine.component.scss'
 })
@@ -15,6 +17,8 @@ export class SlotMachineComponent {
   public spinnersNumber = Array.from(Array(5).keys());
   private enableSpin = true;
   public betNumber = '000.000.000';
+  public showPopup = false;
+  public popupMessage = 'Please set bet. click "+" and click "spin" again'
 
   constructor(private slotMacineSrv: SlotMachineService) { }
 
@@ -27,6 +31,8 @@ export class SlotMachineComponent {
       setTimeout(() => this.slotMacineSrv.start.update(() => false));
       setTimeout(() => this.enableSpin = true, 5000);
       setTimeout(() => this.betNumber = '000.000.000', 5000)
+    }else if (this.enableSpin){
+         this.showPopup = true;
     }
   }
 

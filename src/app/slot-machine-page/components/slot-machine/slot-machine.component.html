@@ -23,4 +23,7 @@
         <img class="max-bet-btn" src="assets/slot-1128/but_maxbet_bg.png" />
         <img class="spin-btn" src="assets/slot-1128/but_spin_bg.png" (click)="spin()" />
     </div>
+    @if(showPopup){
+        <app-bet-popup (close)="showPopup = false" [message] = popupMessage></app-bet-popup>
+    }
 </div>
